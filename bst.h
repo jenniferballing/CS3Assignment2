@@ -178,11 +178,7 @@ string BinarySearchTree<Etype>::toString(TreeNode<Etype> *t, string indent) cons
 	}
 	else
 	{
-		//store the element
-		//string element;
-		string current, parent;// new string();
-		//string left;// = new string();
-		//string right;// = new string();
+		string current, parent;
 
 		stringstream sp, sl;
 		sp << t->element;
@@ -257,7 +253,24 @@ void BinarySearchTree<Etype>::makeTree(vector<Etype> all)
 template <class Etype>
 void BinarySearchTree<Etype>::makeEmpty(TreeNode<Etype> *&t)
 {
-
+	if (t == NULL)
+	{
+		return;
+	}
+	if (t->left != NULL)
+	{
+		TreeNode <Etype> *left = new TreeNode <Etype>();
+		left = t->left;
+		makeEmpty(left);
+	}
+	if (t->right != NULL)
+	{
+		TreeNode <Etype> *right = new TreeNode <Etype>();
+		right = t->right;
+		makeEmpty(right);
+	}
+	t = NULL;
+	delete t;
 }
 
 

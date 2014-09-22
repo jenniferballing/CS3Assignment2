@@ -24,9 +24,16 @@ int main()
 		v6.push_back(t);
 	}
 	v6.push_back(val);
-	tree0.makeTree(v1);
+	tree0.makeTree(v0);
+	tree1.makeTree(test);
 	//tree1.makeTree(v1);
-	cout << tree0.toString("Tree 0");
+	cout << tree0.toString("Tree 0")<<endl<<endl;
+	cout << tree1.toString("Tree 1") << endl;
+
+	tree0.makeEmpty();
+	cout << tree0.toString("Tree 0") << endl << endl;
+	cout << tree1.toString("Tree 1") << endl;
+
 	//cout << tree1.traverse("Tree 1");
 	/*cout << "Fringe count tree1:" << tree1.countFringe() << endl;
 	cout << "Minimum element of tree 1 is " << tree1.minimumEle()->element << endl;
